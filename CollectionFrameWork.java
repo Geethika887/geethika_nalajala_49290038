@@ -1,0 +1,38 @@
+package collections;
+
+import java.util.*;
+
+public class CollectionFrameWork {
+
+	public static void main(String args[]) {
+		Contact c1=new Contact(1234567890,"get","get@gmail.com");
+		Contact c2=new Contact(934989759,"sgh","fed@gmail.com");
+		Contact c3=new Contact(768945607, "dsf","gsd@gmail.com");
+		
+		Map<Long,Contact> c = new TreeMap<>(Collections.reverseOrder());
+		c.put(c1.getPhNumber(), c1);
+		c.put(c2.getPhNumber(), c2);
+		c.put(c3.getPhNumber(), c3);
+		for(long l: c.keySet()) {
+			System.out.println(l.getName()); 
+			System.out.println(l.getEmail());
+			//System.out.println(l.getG()); 
+			System.out.println(" ");
+			
+			
+		}
+		System.out.println(" ");
+		System.out.println("c");
+		System.out.println(" ");
+		for(Map.Entry<Long, Contact> entry : c.entrySet())
+		{
+			System.out.println("key :"+entry.getKey());
+			System.out.println("Name :"+entry.getValue().getName());
+			System.out.println("Email :"+entry.getValue().getG());
+			System.out.println();
+		}
+			
+		
+		
+	}
+}
